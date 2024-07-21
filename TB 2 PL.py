@@ -62,8 +62,6 @@ class Buku:
                 conn.close()
                 logger.info("Koneksi ke MySQL ditutup.")
 
-
-# Fungsi untuk membuat tabel buku jika belum ada
 def create_table_buku():
     try:
         conn = mysql.connector.connect(
@@ -101,8 +99,6 @@ def create_table_buku():
             conn.close()
             logger.info("Koneksi ke MySQL ditutup.")
 
-
-# Fungsi untuk mengambil data buku dari basis data
 def get_buku():
     try:
         conn = mysql.connector.connect(
@@ -135,8 +131,6 @@ def get_buku():
             conn.close()
             logger.info("Koneksi ke MySQL ditutup.")
 
-
-# Contoh penggunaan
 if __name__ == "__main__":
     # Membuat tabel buku jika belum ada
     create_table_buku()
@@ -148,7 +142,6 @@ if __name__ == "__main__":
                       "QnA"], "Buku ini memberitahu bagaimana keseharian aul")
     buku_baru.post()
 
-    # Mengambil data buku dari basis data
     try:
         bukus = get_buku()
         for buku in bukus:
